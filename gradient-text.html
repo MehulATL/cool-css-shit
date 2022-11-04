@@ -1,0 +1,41 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: hsl(0 0% 10%);
+  }
+
+  .trill {
+    --bg-size: 400%;
+    --color-one: hsl(270 50% 60%);
+    --color-two: hsl(168, 83%, 47%);
+    font-family: sans-serif;
+    font-size: clamp(3rem, 25vmin, 8rem);
+    background: linear-gradient(90deg,
+        var(--color-one),
+        var(--color-two),
+        var(--color-one)) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    \
+ background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .trill {
+      animation: move-bg 8s linear infinite reverse;
+    }
+
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
+</style>
+<h1 class="trill">trill shit only!</h1>
